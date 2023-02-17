@@ -39,12 +39,14 @@ public class _01_JavaClassSearchDemo {
         for( int i : intArr ) {
             System.out.print(i + " ");
         }
+        
         System.out.println("\n4 found at index: " + index + "\n");
 
         /*
          * Searching an element in an ArrayList using the Collections class
          */
         ArrayList<String> stringList = new ArrayList<String>();
+        
         stringList.add("f");
         stringList.add("e");
         stringList.add("d");

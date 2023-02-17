@@ -3,6 +3,7 @@ package _01_Sorting_Algorithms;
 import java.util.Random;
 
 public class BogoSorter extends Sorter {
+	
     public BogoSorter() {
         type = "Bogo";
     }
@@ -20,6 +21,33 @@ public class BogoSorter extends Sorter {
      */
     @Override
     void sort(int[] array, SortingVisualizer display) {
+    	boolean inOrder = false;
+    	
+    	while(!inOrder) {
+    	
+	        for(int i = 0; i < array.length; i++) {
+	        	
+	        	for(int k = 0; k < array.length - 1; k++) {
+	        		
+	        		if(array[k] > array[k+1]) {
+	        			int randomIndex1 = new Random().nextInt(((array.length) - (k+1))) + (k+1);
+	        			int randomIndex2 = new Random().nextInt(((array.length) - (k+1))) + (k+1);
+        			
+	        			int temp  = array[randomIndex1];
+	        			array[randomIndex1] = array[randomIndex2];
+	        			array[randomIndex2] = temp;
+	        			System.out.println("Out of order");
+	        			display.updateDisplay();
+	        			continue;
+	        		}else {
+	        			System.out.println("In order");
+	        			continue;
+	        		}
+	        		
+	        	}
+	        }
+	        
+    	}
         
     }
 }
